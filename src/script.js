@@ -4,6 +4,7 @@ const button = document.querySelector(".form__button");
 let firstName = document.querySelector('.first-name');
 let lastName = document.querySelector('.last-name');
 const removeElement = "╳";
+const item = document.querySelectorAll('li');
 
 
 button.addEventListener("click", (event) => {
@@ -13,5 +14,16 @@ button.addEventListener("click", (event) => {
   list.append(listItem);
   firstName.value = " ";
   lastName.value = " ";
-});
+})
+
+list.onclick = (event) => {
+  let target = event.target;
+  if (target === removeElement) {
+    item.forEach((element) => {
+      element.pop();
+    })
+  }
+}
+
+
 
